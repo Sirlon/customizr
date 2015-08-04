@@ -168,7 +168,7 @@ module.exports = function (modernizrPath) {
 
 			var tests = settings.tests.map(function (test) {
 				var data = metadata.filter(function (data) {
-					return data.property === test;
+					return (data.property === test) || (data.property.indexOf(test) > -1);
 				});
 
 				return data[0] || {};
